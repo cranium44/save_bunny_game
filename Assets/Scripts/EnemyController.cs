@@ -6,17 +6,22 @@ public class EnemyController : MonoBehaviour {
 
 	public float rotationSpeed;
 
-	// Use this for initialization
-	void Start () {
-		
+	private void FixedUpdate() {
+		transform.Rotate(0, 0, rotationSpeed);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
 		
 	}
 
-	private void FixedUpdate() {
-		transform.Rotate(0, 0, rotationSpeed);
+	void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "Player")
+		{
+			Destroy(collision.gameObject);
+		}else if(collision.gameObject.tag == "Ground"){
+			Destroy(gameObject);
+		}
 	}
 }
