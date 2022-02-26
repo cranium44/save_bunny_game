@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
 	public float rotationSpeed;
-
+	public GameObject dust;
 	private void FixedUpdate() {
 		transform.Rotate(0, 0, rotationSpeed);
 	}
@@ -21,7 +21,10 @@ public class EnemyController : MonoBehaviour {
 		{
 			Destroy(collision.gameObject);
 		}else if(collision.gameObject.tag == "Ground"){
-			Destroy(gameObject);
+			GameObject _dust = Instantiate(dust, transform.position, Quaternion.identity);
+			gameObject.SetActive(false);
+			Destroy(_dust, 1f);
+			Destroy(gameObject, 2f);
 		}
 	}
 }

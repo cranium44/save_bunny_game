@@ -145,7 +145,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.2784314, b: 0.2392157, a: 1}
+      key0: {r: 1, g: 0.2784314, b: 0.2392157, a: 0.8862745}
       key1: {r: 1, g: 1, b: 1, a: 0.627451}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -6
+  dust: {fileID: 1959234490822118, guid: 57c9eae773786f24799b6169f6a89663, type: 2}
 --- !u!212 &212338416837152478
 SpriteRenderer:
   m_ObjectHideFlags: 1
