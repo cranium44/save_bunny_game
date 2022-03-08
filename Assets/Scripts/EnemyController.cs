@@ -20,11 +20,14 @@ public class EnemyController : MonoBehaviour {
 		if (collision.gameObject.tag == "Player")
 		{
 			Destroy(collision.gameObject);
+			GameManager.instance.GameOver();
+			// GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
 		}else if(collision.gameObject.tag == "Ground"){
 			GameObject _dust = Instantiate(dust, transform.position, Quaternion.identity);
 			gameObject.SetActive(false);
 			Destroy(_dust, 1f);
 			Destroy(gameObject, 2f);
+			GameManager.instance.UpdateScore();
 		}
 	}
 }
