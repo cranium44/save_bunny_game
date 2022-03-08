@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance { get; private set; }
     bool isGameOver = false;
 	int score = 0;
+	public Text scoreText;
 
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
 	public void UpdateScore(){
 		if(!isGameOver){
 			score += 1;
+			scoreText.text = score.ToString();
 		}
 	}
 
