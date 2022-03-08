@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     bool isGameOver = false;
 	int score = 0;
 	public Text scoreText;
+	public GameObject gameOverPanel;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
 		ResetScore();
+		gameOverPanel.SetActive(true);
         GameObject.Find("EnemySpawnPoint").GetComponent<EnemySpawnController>().StopSpawn();
     }
 
